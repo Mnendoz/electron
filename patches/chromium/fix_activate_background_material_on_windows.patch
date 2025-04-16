@@ -38,7 +38,7 @@ index 29829e282edfa8821bd366a9e9a3755d7f3f8643..c2f46c5960ef914a21e6df6e56298b3c
        thread_id != GetCurrentThreadId()) {
      // Update the native frame if it is rendering the non-client area.
 -    if (HasSystemFrame()) {
-+    if (HasSystemFrame() || is_translucent_) {
++    if (is_translucent_ || HasSystemFrame()) {
        DefWindowProcWithRedrawLock(WM_NCACTIVATE, FALSE, 0);
      }
    }
